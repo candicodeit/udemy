@@ -1,1 +1,49 @@
-/* Put your code here */
+/* ------ Lecture 9 */
+.grid {
+  display: grid;
+  /* grid-template-rows: 100px 200px;
+  grid-template-columns: 200px auto 150px; */
+
+  grid-template: 100px 200px
+                / 200px auto 150px;
+                /* grid row / grid column */
+}
+
+/* ------ Lecture 10
+  start and end refer to the lines on the grid.
+
+  this example has 3 row lines and 4 column lines. to move Item 2 in the first position, you're starting that div between row line 1 and 2.
+*/
+.grid div:nth-child(2) {
+  grid-row-start: 2; /* Lecture 12 - can use row1-end or row2-start in place of the number */
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+/* shorthand
+  grid-row: start / end;
+  grid-column: start / end;
+*/
+.grid div:nth-child(5) {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+}
+
+/* ------ Lecture 11
+  this doesn't define specifically where it starts. this div will span 2 rows wherever it is within the grid.
+*/
+.grid div:nth-child(1) {
+  grid-row: auto / span 2;
+}
+
+/* ------ Lecture 12
+  naming the grid lines as variables to use elsewhere in the grid declarations.
+*/
+.grid {
+  grid-template: [row1-start] 100px [row1-end row2-start] 200px [row2-end];
+}
+
+/* ------ Lecture 13 */
+/* ------ Lecture 14 */
+/* ------ Lecture 15 */
